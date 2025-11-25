@@ -1,0 +1,186 @@
+/* --- Global Styles and Typography --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* --- Main Layout: Two Columns using Flexbox --- */
+.container {
+    display: flex;
+    gap: 20px; /* Space between columns */
+    padding-top: 20px;
+}
+
+.input-section, .output-section {
+    flex: 1; /* Both sections take equal width */
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow for card effect */
+}
+
+/* --- Input Section Styling --- */
+.input-section h3 {
+    font-weight: normal;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+input[type="text"], 
+input[type="date"], 
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+    margin-top: 10px;
+}
+
+.json-input-area p {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.analyze-button {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.analyze-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Output Section Styling --- */
+
+.sorting-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.sorting-header label {
+    font-weight: normal;
+    font-size: 1em;
+    margin: 0;
+}
+
+#sorting-strategy {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Task Card Styling */
+.task-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #fafafa;
+    position: relative;
+}
+
+.task-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #222;
+}
+
+.task-card p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.task-card .description {
+    font-style: italic;
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dotted #ddd;
+}
+
+/* Priority Badges (Color Coding) */
+.priority-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* High Priority - Green/Darker Green (as seen in image) */
+.priority-badge.high {
+    background-color: #4CAF50; /* Green */
+}
+.task-card.high {
+    border-left: 5px solid #4CAF50;
+}
+
+/* Medium Priority - Orange/Darker Orange */
+.priority-badge.medium {
+    background-color: #FF9800; /* Orange */
+}
+.task-card.medium {
+    border-left: 5px solid #FF9800;
+}
+
+/* Low Priority - Red/Darker Red (as seen in image) */
+.priority-badge.low {
+    background-color: #F44336; /* Red */
+}
+.task-card.low {
+    border-left: 5px solid #F44336;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <header>
+        <h1>Smart Task Analyzer</h1>
+    </header>
+
+    <main class="container">
+        <section class="input-section">
+            <h2>Input Section</h2>
+            <h3>Add a new task</h3>
+            
+            <form id="task-form">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="due-date">Due Date</label>
+                <input type="date" id="due-date" name="due-date" required>
+                
+                <label for="estimated-hours">Estimated Hours</label>
+                <input type="number" id="estimated-hours" name="estimated-hours" min="1" required>
+                
+                <label for="importance">Importance</label>
+                <input type="number" id="importance" name="importance" min="1" max="10" required>
+                
+                <label for="dependencies">Dependencies</label>
+                <input type="text" id="dependencies" name="dependencies" placeholder="Task IDs separated by comma">
+            </form>
+
+            <div class="json-input-area">
+                <p>Or paste a list of tasks in JSON format</p>
+                <textarea id="json-list" placeholder='[{"title": "Task 1", ...}]'></textarea>
+            </div>
+
+            <button id="analyze-button" class="analyze-button">Analyze Tasks</button>
+        </section>
+
+        <section class="output-section">
+            <h2>Output Section</h2>
+
+            <div class="sorting-header">
+                <label for="sorting-strategy">Sorting Strategy</label>
+                <select id="sorting-strategy">
+                    <option>Smart Balance</option>
+                    <option>Urgency First</option>
+                    <option>Importance First</option>
+                </select>
+            </div>
+            
+            <div id="results-list" class="results-list">
+                <div class="task-card high">
+                    <span class="priority-badge high">High</span>
+                    <h3>Implement login</h3>
+                    <p>Due date: 2025-11-30</p>
+                    <p>Estimated hours: 3</p>
+                    <p>Importance: 8</p>
+                    <p class="description">Urgent and important task with no dependencies</p>
+                </div>
+                
+                <div class="task-card medium">
+                    <span class="priority-badge medium">Medium</span>
+                    <h3>Update user profile page</h3>
+                    <p>Due date: 2024-12-31</p>
+                    <p>Estimated hours: 4</p>
+                    <p class="description">Important task due later with moderate effort</p>
+                </div>
+                
+                <div class="task-card low">
+                    <span class="priority-badge low">Low</span>
+                    <h3>Refactor codebase</h3>
+                    <p>Due date: 2024-10-15</p>
+                    <p>Estimated hours: 12</p>
+                    <p class="description">Large effort task due much later</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    </body>
+</html>
